@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<LangVersion>8.0</LangVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DebugType>pdbonly</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
+        <PackageReference Include="Xamarin.Forms.BackgroundKit" Version="2.1.2" />
+        <PackageReference Include="CompiledBindings.XF" Version="1.0.16" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\expAvaloniaXamarin.AvaloniaV2\expAvaloniaXamarin.AvaloniaV2\expAvaloniaXamarin.AvaloniaV2.csproj" />
+    </ItemGroup>
+</Project>

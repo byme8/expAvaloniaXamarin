@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0-android</TargetFramework>
+        <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+        <Nullable>enable</Nullable>
+        <ApplicationId>com.CompanyName.expAvaloniaXamarin</ApplicationId>
+        <ApplicationVersion>1</ApplicationVersion>
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <AndroidPackageFormat>apk</AndroidPackageFormat>
+        <AndroidEnableProfiledAot>False</AndroidEnableProfiledAot>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia.Android" Version="$(AvaloniaVersion)" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(AndroidEnableProfiler)'=='true'">
+        <AndroidEnvironment Include="environment.device.txt"/>
+    </ItemGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <RunAOTCompilation>False</RunAOTCompilation>
+        <AndroidEnableProfiledAot>False</AndroidEnableProfiledAot>
+        <AndroidCreatePackagePerAbi>True</AndroidCreatePackagePerAbi>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\expAvaloniaXamarin\expAvaloniaXamarin.csproj" />
+    </ItemGroup>
+</Project>

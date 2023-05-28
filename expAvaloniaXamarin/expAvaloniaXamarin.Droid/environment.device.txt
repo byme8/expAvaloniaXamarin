@@ -1,0 +1,1 @@
+DOTNET_DiagnosticPorts=192.168.50.186:9001,suspend

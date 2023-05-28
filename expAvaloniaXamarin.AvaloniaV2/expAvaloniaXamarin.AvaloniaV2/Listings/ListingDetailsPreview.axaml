@@ -1,0 +1,76 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:expAvaloniaXamarin.AvaloniaV2.ViewModels"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
+             Background="Transparent"
+             mc:Ignorable="d" d:DesignWidth="320" d:DesignHeight="400"
+             x:Class="expAvaloniaXamarin.AvaloniaV2.Listings.ListingDetailsPreview"
+             x:DataType="viewModels:ListingViewModel">
+    <Design.DataContext>
+        <viewModels:ListingViewModel />
+    </Design.DataContext>
+
+    <Border Padding="5" BoxShadow="0 0 10 5 Blue">
+        <StackPanel>
+            <Border CornerRadius="10" ClipToBounds="True">
+                <Grid>
+                    <Carousel x:Name="Carusell" ItemsSource="{Binding Images}" Height="200">
+                        <Carousel.PageTransition>
+                            <PageSlide Orientation="Horizontal" Duration="1" />
+                        </Carousel.PageTransition>
+                        <Carousel.ItemTemplate>
+                            <DataTemplate x:DataType="system:String">
+                                <Image Stretch="UniformToFill" asyncImageLoader:ImageLoader.Source="{Binding .}" />
+                            </DataTemplate>
+                        </Carousel.ItemTemplate>
+                    </Carousel>
+
+					<Button x:Name="PrevB"> 
+						<Label Content=".." />
+					</Button>
+
+					<Button x:Name="NextB" HorizontalAlignment="Right">
+						<Label Content=".." />
+					</Button>
+
+                    <Label Margin="10"
+                           VerticalAlignment="Bottom" Content="{Binding Price}"
+                           Foreground="White" />
+                </Grid>
+            </Border>
+
+            <Label Margin="5"
+                   Content="{Binding Address}"
+                   FontWeight="Bold" />
+
+            <Label Margin="5"
+                   Content="Uws / Pre-war / Sale / Fee Paid by: Owner"
+                   FontWeight="SemiLight" />
+
+            <StackPanel Margin="5" Orientation="Horizontal" Spacing="10">
+                <StackPanel Orientation="Horizontal">
+                    <Border Background="Aqua" Height="32" Width="32" />
+                    <Label Content="1" VerticalAlignment="Center" />
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal">
+                    <Border Background="Aqua" Height="32" Width="32" />
+                    <Label Content="1" VerticalAlignment="Center" />
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal">
+                    <Border Background="Aqua" Height="32" Width="32" />
+                    <Label Content="1" VerticalAlignment="Center" />
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal">
+                    <Border Background="Aqua" Height="32" Width="32" />
+                    <Label Content="1" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

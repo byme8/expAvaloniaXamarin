@@ -1,0 +1,22 @@
+﻿<FlexLayout xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="expAvaloniaXamarin.Core.FormsChips"
+            x:Name="Root"
+            Wrap="Wrap"
+            AlignItems="Start"
+            Padding="2">
+    <BindableLayout.ItemTemplate>
+        <DataTemplate x:DataType="x:String">
+            <Grid Margin="4"
+                  HeightRequest="44">
+                <BoxView CornerRadius="10" BackgroundColor="Red" />
+                <Label Padding="4"
+                       FontSize="12"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       Text="{Binding .}"
+                       TextColor="Black" />
+            </Grid>
+        </DataTemplate>
+    </BindableLayout.ItemTemplate>
+</FlexLayout>

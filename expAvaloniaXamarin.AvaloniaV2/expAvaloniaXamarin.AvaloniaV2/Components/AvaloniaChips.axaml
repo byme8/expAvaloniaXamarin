@@ -1,0 +1,30 @@
+<ControlTemplate xmlns="https://github.com/avaloniaui"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:system="clr-namespace:System;assembly=netstandard"
+                 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+                 x:Class="expAvaloniaXamarin.AvaloniaV2.Components.AvaloniaChips">
+    <ItemsControl ItemsSource="{Binding	$parent.Items}" Background="Transparent">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <WrapPanel />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="system:String">
+                <Button Margin="4"
+                        Height="44"
+                        CornerRadius="10"
+                        Background="Red">
+                    <Label VerticalAlignment="Center" 
+                           HorizontalAlignment="Center"
+                           Padding="4"
+                           FontSize="12"
+                           Content="{Binding .}" />
+                </Button>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+</ControlTemplate>

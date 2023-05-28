@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:listings="clr-namespace:expAvaloniaXamarin.AvaloniaV2.Listings;assembly=expAvaloniaXamarin.AvaloniaV2"
+             xmlns:core="clr-namespace:expAvaloniaXamarin.Core;assembly=expAvaloniaXamarin"
+             x:Class="expAvaloniaXamarin.MainPage">
+
+    <Grid>
+        <ContentPresenter x:Name="ContentP" />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+            <Button Text="Avalonia" Clicked="CreateAvalonia" />
+            <Button Text="Forms" Clicked="CreateForms" />
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
